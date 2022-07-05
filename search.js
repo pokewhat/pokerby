@@ -4,7 +4,7 @@ var theurl = "https://pokewhat.github.io/pokerby/search.html";
 var getBlob = async function(urlparam) {
   var toReturn = null;
   let theblob = await fetch(urlparam).then((value) => {
-    toReturn = value;
+    toReturn = value.blob();
   }, function() {
     toReturn = null;
   });
