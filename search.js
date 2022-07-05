@@ -10,4 +10,5 @@ toreadhtml.onload = function(event) {
   toappendto.insertAdjacentHTML("beforeend", event.target.result);
 };
 let theblob = getBlob(theurl);
+console.log(theblob);
 toreadhtml.readAsText(theblob);
