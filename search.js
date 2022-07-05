@@ -12,9 +12,8 @@ function loadFile(url, callback) {
   xhr.open('GET', url, true);
   xhr.send('');
 }
-//  toappendto.insertAdjacentHTML("beforeend", event.target.result);
 
 loadFile(theurl, function(response) {
   console.log(response);
-  
+  toappendto.insertAdjacentHTML("beforeend", response);
 });
