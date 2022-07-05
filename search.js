@@ -1,19 +1,20 @@
 var toappendto = document.getElementsByClassName("contentbck")[0];
-var toreadhtml = new FileReader();
 var theurl = "https://pokewhat.github.io/pokerby/search.html";
-var requestData = async function(urlparam) {
-  let req = fetch(urlparam);
-  return req;
-};
-toreadhtml.onload = function(event) {
-  toappendto.insertAdjacentHTML("beforeend", event.target.result);
-};
-let thereq = requestData(theurl);
-console.log(thereq);
-thereq.then(
-  (value) => {
-    toreadhtml.readAsText(value.blob());
-  }, function() {
-    console.log("Blob gather failed...");
+function loadFile(url, callback) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      callback(xhr.response);
+    }
   }
-);
+
+  xhr.open('GET', url, true);
+  xhr.send('');
+}
+//  toappendto.insertAdjacentHTML("beforeend", event.target.result);
+
+loadFile(theurl, function(response) {
+  console.log(response);
+  
+});
