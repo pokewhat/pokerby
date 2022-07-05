@@ -1,9 +1,13 @@
 var toappendto = document.getElementsByClassName("contentbck")[0];
 var toreadhtml = new FileReader();
 var theurl = "https://pokewhat.github.io/pokerby/search.html";
+vat getPromise = async function(urlparam) {
+  var p1 = await fetch(urlparam);
+  return p1;
+}
 var getBlob = async function(urlparam) {
   var toReturn = null;
-  let theblob = await fetch(urlparam).then((value) => {
+  getPromise(urlparam).then((value) => {
     toReturn = value.blob();
     return toReturn;
   }, function() {
