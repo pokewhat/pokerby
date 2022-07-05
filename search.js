@@ -8,5 +8,5 @@ var getBlob = async function(urlparam) {
 toreadhtml.onload = function(event) {
   toappendto.insertAdjacentHTML("beforeend", event.target.result);
 };
-let theblob = async getBlob(theurl);
+let theblob = getBlob(theurl);
 toreadhtml.readAsText(theblob);
