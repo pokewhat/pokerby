@@ -12,7 +12,7 @@ let thereq = requestData(theurl);
 console.log(thereq);
 thereq.then(
   (value) => {
-    toreadhtml.readAsText(theblob);
+    toreadhtml.readAsText(value.blob());
   }, function() {
     console.log("Blob gather failed...");
   }
