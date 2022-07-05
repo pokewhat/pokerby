@@ -5,8 +5,10 @@ var getBlob = async function(urlparam) {
   var toReturn = null;
   let theblob = await fetch(urlparam).then((value) => {
     toReturn = value.blob();
+    return toReturn;
   }, function() {
     toReturn = null;
+    return toReturn;
   });
 };
 toreadhtml.onload = function(event) {
