@@ -4,4 +4,5 @@ var theurl = "https://pokewhat.github.io/pokerby/search.html"
 toreadhtml.onload = function(event) {
   toappendto.insertAdjacentHTML("beforeend", event.target.result);
 };
-toreadhtml.readAsText(theurl);
+let theblob = await fetch(theurl).then(r => r.blob());
+toreadhtml.readAsText(theblob);
