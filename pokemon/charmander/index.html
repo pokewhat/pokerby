@@ -1,1 +1,54 @@
+<!doctype HTML>
 
+<html>
+  <head>
+    <base href="https://pokewhat.github.io/">
+    <link rel="stylesheet" href="main.css">
+    <title>
+      PokéWHAT?
+    </title>
+    <script src="favicon.js"></script>
+    <script src="bestExp.js"></script>
+  </head>
+  <body>
+    <div class="banner contentbck">
+      DEXTER THE POKÉDEX!
+    </div>
+    <div class="contentmed contentbck">
+      <div class="banner">Charmander</div>
+      <br>
+      <div class="contentmed">The fire starter Pokémon.</div>
+      <br>
+      <div class="contentmed">Evolves into Charmeleon at level 16.</div>
+      <br>
+      <div class="banner">Learnset/Moves (if not evolved)</div>
+      <div class="contentmed">LVL 9, EMBER</div>
+      <br>
+      <div class="contentmed">LVL 15, LEER</div>
+      <br>
+      <div class="contentmed">LVL 22, RAGE</div>
+      <br>
+      <div class="contentmed">LVL 30, SLASH</div>
+      <br>
+      <div class="contentmed">LVL 38, FLAMETHROWER</div>
+      <br>
+      <div class="contentmed">LVL 46, FIRE_SPIN</div>
+      <br>
+      
+      <input class="contentmed" type="text" id="poke"
+        placeholder="Type a Pokémon name in lowercase here (no spaces allowed)"
+        title="Type a Pokémon name in lowercase here (no spaces allowed)">
+      <button id="submitpoke" class="contentmed">Search</button>
+    </div>
+    <script>
+      reponame = "pokerby";
+      var getPokeUrl = function(poke, base) {
+        return (base + reponame + "/pokemon/" + poke);
+      }
+      document.getElementById("submitpoke").addEventListener("click", function() {
+        var theBase = document.querySelectorAll("base")[0].getAttribute("href");
+        alert(getPokeUrl(document.getElementById("poke").value, theBase));
+      });
+    </script>
+  </body>
+</html>
