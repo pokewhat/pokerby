@@ -1,4 +1,3 @@
-var toappendto = document.getElementsByClassName("contentbck")[0];
 var theurl = "https://pokewhat.github.io/pokerby/search.html";
 function loadFile(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -12,8 +11,10 @@ function loadFile(url, callback) {
   xhr.open('GET', url, true);
   xhr.send('');
 }
-
-loadFile(theurl, function(response) {
-  console.log(response);
-  toappendto.insertAdjacentHTML("beforeend", response);
-});
+document.addEventListener("DOMContentLoaded", function() {
+  var toappendto = document.getElementsByClassName("contentbck")[0];
+  loadFile(theurl, function(response) {
+    console.log(response);
+    toappendto.insertAdjacentHTML("beforeend", response);
+  });
+};
