@@ -21,8 +21,15 @@
       <br>
       <div class="contentmed">Check out some articles</div>
       <input class="contentmed" type="text" id="poke"
-        placeholder="Type a Pokémon name in lowercase here">
+        placeholder="Type a Pokémon name in lowercase here (no spaces allowed)">
       <button id="submitpoke" class="contentmed">Search</button>
     </div>
+    <script>
+      reponame = "pokerby";
+      document.getElementById("submitpoke").addEventListener("click", function() {
+        var theBase = document.querySelectorAll("base")[0].getAttribute("href");
+        alert(theBase + reponame + "/pokemon/" + document.getElementById("poke").value);
+      });
+    </script>
   </body>
 </html>
