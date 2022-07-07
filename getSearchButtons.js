@@ -16,3 +16,4 @@ var loadItAll = function() {
     window.location.href = (getPokeUrl(document.getElementById("poke").value, theBase));
   });
 };
+loadItAll();
