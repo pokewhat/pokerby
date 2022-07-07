@@ -1,6 +1,10 @@
 reponame = "pokerby";
 var loadItAll = function() {
-  if(!(!(document.getElementById("submitpoke") == undefined) || !(document.getElementById("poke") == undefined) || !(document.querySelectorAll("base")[0] == undefined))) {
+  if(!(
+       (!(document.getElementById("poke") == undefined) || !(document.getElementById("poke") == null)) ||
+       (!(document.getElementById("submitpoke") == undefined) || !(document.getElementById("submitpoke") == null)) || 
+       (!(document.querySelectorAll("base")[0] == undefined) || !(document.querySelectorAll("base")[0] == null))
+    )) {
     this();
     return;
   }
